@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'PythonClub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'techreviewdb',
+        'NAME': 'pythonclub',
         'USER' : 'postgres',
-        'PASSWORD': 'P@ssw0rd1',
+        'PASSWORD': 'aihaphooneshua',
         'HOST' :'localhost',
         'PORT' :'',
     }
