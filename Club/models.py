@@ -8,19 +8,26 @@ class Meeting(models.Model):
     meetingTime=models.TimeField()
     meetingLocation=models.CharField(max_length=255)
     meetingAgenda=models.TextField()
+    meetingManager= models.Manager()
+    
+    def __str__(self):
+        return self.meetingTitle
     
     class Meta:
         db_table='meeting'
-        verbose_name_plural='meeting'
+        verbose_name_plural='meetings'
         
 class MeetingMinutes(models.Model):
-    meetingID=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
+    meetingId=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
     attendence=models.IntegerField()
     minutesText=models.TextField()
+    minutesManager=models.Manager()
     
+    def __str__(self):
+        return self.meetingId.__str__()
     class Meta:
-        db_table='meetingMinutes'
-        verbose_name_plural='meetingMinutes'
+        db_table='detail'
+        verbose_name_plural='details'
 
 
 class Resource(models.Model):
@@ -46,6 +53,8 @@ class Event(models.Model):
     description=models.TextField()
     userId=models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
+    def __str__(self):
+        return self.eventTitle
     class Meta:
         db_table='event'
         verbose_name_plural='event'
