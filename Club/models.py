@@ -22,7 +22,7 @@ class MeetingMinutes(models.Model):
     attendence=models.IntegerField()
     minutesText=models.TextField()
     minutesManager=models.Manager()
-    
+
     def __str__(self):
         return self.meetingId.__str__()
     class Meta:
