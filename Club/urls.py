@@ -9,4 +9,7 @@ urlpatterns=[
     path('meeting/details/<int:id>', views.getMeetingDetails, name='details'),
     path('newMeeting/', views.newMeeting, name='newMeeting'),
     path('newResource/', views.newResource, name='newResource'),
+    # path('login/', views.login, name='login'),
+    path('loginMessage/', views.loginMessage, name='loginMessage'),
+    path('logoutMessage/', views.logoutMessage, name='logoutMessage'),
 ]
